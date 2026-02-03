@@ -416,10 +416,12 @@ scores = results[0].pred_instances.keypoint_scores[0]  # (20,)
 
 ### Trained Models
 
-| Model | Config | PCK@0.05 | AUC | NME | Download |
-|-------|--------|----------|-----|-----|----------|
-| ViTPose-Base (Baseline) | [config](configs/cavfish/vitpose_base_cavfish.py) | 95.2 | 0.847 | 2.34 | [model](https://github.com/josuedelarosa/CaVFish-MORPH/releases) |
-| ViTPose-Base + Phenotype Loss | [config](configs/cavfish/vitpose_base_cavfish_phenoloss.py) | 95.8 | 0.853 | 2.18 | [model](https://github.com/josuedelarosa/CaVFish-MORPH/releases) |
+Trained model weights will be released upon paper acceptance.
+
+| Model | Config | Download |
+|-------|--------|---------|
+| ViTPose-Base (Baseline) | [config](configs/cavfish/vitpose_base_cavfish.py) | [TBA](https://github.com/josuedelarosa/CaVFish-MORPH/releases) |
+| ViTPose-Base + Phenotype Loss | [config](configs/cavfish/vitpose_base_cavfish_phenoloss.py) | [TBA](https://github.com/josuedelarosa/CaVFish-MORPH/releases) |
 
 ### Pretrained Weights
 
@@ -431,27 +433,7 @@ scores = results[0].pred_instances.keypoint_scores[0]  # (20,)
 
 ## 📊 Results
 
-### Keypoint Detection Performance
-
-| Method | Backbone | PCK@0.05 ↑ | AUC ↑ | NME ↓ |
-|--------|----------|------------|-------|-------|
-| HRNet-W32 | HRNet | 92.1 | 0.821 | 2.89 |
-| ViTPose-Small | ViT-S | 93.7 | 0.835 | 2.56 |
-| **ViTPose-Base (Ours)** | ViT-B | **95.2** | **0.847** | **2.34** |
-| **+ Phenotype Loss (Ours)** | ViT-B | **95.8** | **0.853** | **2.18** |
-
-### Morphometric Accuracy
-
-| Method | Standard Length Error ↓ | Body Depth Error ↓ | Fin Position Error ↓ |
-|--------|------------------------|-------------------|---------------------|
-| ViTPose-Base | 1.24% | 2.87% | 3.45% |
-| **+ Phenotype Loss** | **0.89%** | **2.13%** | **2.67%** |
-
-**Key Findings**:
-- Phenotype loss reduces morphometric error by **~30%**
-- Maintains high keypoint detection accuracy
-- Particularly effective for inter-keypoint measurements
-- Improves generalization to new fish populations
+Experimental results and performance metrics will be added upon completion of the full evaluation pipeline.
 
 ---
 
@@ -555,9 +537,8 @@ If you find this work useful in your research, please consider citing:
 @article{povedacuellar2026cavfish,
   title={CaVFish-MORPH database: AI-driven morphometrics for mapping freshwater fish traits},
   author={Poveda-Cuellar, Jose Luis and Rodriguez-de la Rosa, Josué and Martínez-Carrillo, Fabio and García-Melo, Jorge Enrique and García-Melo, Luis José and Marchant, Sergio and Reu, Björn},
-  journal={[Journal Name]},
-  year={2026},
-  doi={[DOI]}
+  journal={Under Review},
+  year={2026}
 }
 ```
 

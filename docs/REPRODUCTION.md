@@ -146,10 +146,7 @@ bash tools/dist_train.sh \
 tensorboard --logdir experiments/exp1_baseline --port 6006
 ```
 
-Monitor these metrics:
-- `train/loss`: Should decrease from ~0.002 to ~0.0005
-- `val/PCK`: Should reach ~95.2% at epoch 300
-- `val/AUC`: Should reach ~0.847
+Monitor training metrics in TensorBoard.
 
 ### Evaluation
 
@@ -160,16 +157,7 @@ python tools/test.py \
     --work-dir experiments/exp1_baseline/evaluation
 ```
 
-**Expected Results** (Table 1 in paper):
-```
-+------------+-------+-------+-------+
-| Metric     | Value | Std   | N     |
-+------------+-------+-------+-------+
-| PCK@0.05   | 95.2  | ±0.3  | 3     |
-| AUC        | 0.847 | ±0.004| 3     |
-| NME        | 2.34  | ±0.08 | 3     |
-+------------+-------+-------+-------+
-```
+Results will be displayed in the terminal and saved to the evaluation directory.
 
 ---
 
@@ -189,10 +177,7 @@ bash tools/dist_train.sh \
 
 ### Monitoring
 
-The phenotype loss should:
-- Start at ~0.05-0.10
-- Decrease to ~0.01-0.02 by epoch 100
-- Stabilize at ~0.005-0.01
+Monitor the phenotype loss component alongside the standard heatmap loss.
 
 Check logs:
 ```bash
@@ -208,21 +193,7 @@ python tools/test.py \
     --work-dir experiments/exp2_phenoloss/evaluation
 ```
 
-**Expected Results** (Table 1 in paper):
-```
-+------------+-------+-------+-------+
-| Metric     | Value | Std   | N     |
-+------------+-------+-------+-------+
-| PCK@0.05   | 95.8  | ±0.2  | 3     |
-| AUC        | 0.853 | ±0.003| 3     |
-| NME        | 2.18  | ±0.06 | 3     |
-+------------+-------+-------+-------+
-```
-
-**Improvement over baseline**:
-- PCK: +0.6%
-- AUC: +0.006
-- NME: -6.8%
+Results will be displayed in the terminal and saved to the evaluation directory. Compare these results with the baseline experiment to assess the impact of the phenotype loss.
 
 ---
 

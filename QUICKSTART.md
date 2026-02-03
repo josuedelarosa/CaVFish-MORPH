@@ -92,11 +92,6 @@ python tools/test.py \
     work_dirs/vitpose_base_cavfish/best_AP_epoch_*.pth
 ```
 
-Expected metrics:
-- **PCK@0.05**: ~95.2%
-- **AUC**: ~0.847
-- **NME**: ~2.34
-
 ## Next Steps
 
 - 📖 Read [README.md](README.md) for complete documentation
