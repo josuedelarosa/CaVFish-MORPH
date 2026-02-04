@@ -1,15 +1,15 @@
-# CaVFish-MORPH Database: AI-Driven Morphometrics for Mapping Freshwater Fish Traits
+# CaVFish-MORPH Database: AI-powered automatic quantification of fish morphometric traits from images
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![MMPose](https://img.shields.io/badge/MMPose-1.3.0-green.svg)](https://github.com/open-mmlab/mmpose)
 [![Paper](https://img.shields.io/badge/paper-arXiv-red.svg)](#)
 
-> **CaVFish-MORPH database: AI-driven morphometrics for mapping freshwater fish traits**  
+> **CaVFish-MORPH database: AI-powered automatic quantification of fish morphometric traits from images**  
 > Poveda-Cuellar, J.L.¹, Rodriguez-de la Rosa, J.², Martínez-Carrillo, F.², García-Melo, J.E.³, García-Melo, L.J.⁴, Marchant, S.¹, Reu, B.¹  
 > *Under Review*, 2026
 
-This repository contains the official implementation of the CaVFish-MORPH database, an AI-driven morphometric analysis system for freshwater fish traits. The system extends Vision Transformer-based pose estimation (ViTPose) with anatomical constraints, achieving high accuracy in fish keypoint detection and morphometric measurements.
+This repository contains the official implementation of the The CaVFish-MORPH database enables AI-driven automatic quantification of morphometric traits in fish from images. The system uses Vision Transformer-based pose estimation (ViTPose) for the detection of keypoints on fish and the quantification of morphological traits.
 
 ---
 
