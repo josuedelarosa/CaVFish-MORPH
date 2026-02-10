@@ -1,10 +1,13 @@
-# CaVFish: Anatomically-Constrained Pose Estimation for Fish Morphometrics
+# CaVFish-MORPH Database: AI-Driven Morphometrics for Mapping Freshwater Fish Traits
 
-<!-- Badges will be added after publication -->
+Official implementation of the **CaVFish-MORPH** pipeline for automated morphometric analysis of freshwater fish using deep learning-based keypoint detection.
 
-This repository contains the official implementation of the paper **"[Paper Title]"** published in **[Journal/Conference Name, Year]**.
+## Overview
 
-We present a novel approach to fish pose estimation that incorporates phenotypic distance constraints to improve the accuracy and anatomical plausibility of keypoint predictions. Built on MMPose and ViTPose, our method enforces consistency in inter-landmark distances during training, making it particularly suitable for morphometric analysis in evolutionary biology and aquaculture research.
+This repository presents a novel approach to fish pose estimation that incorporates phenotypic distance constraints to improve the accuracy and anatomical plausibility of keypoint predictions. Built on MMPose and ViTPose, our method enforces consistency in inter-landmark distances during training, making it particularly suitable for morphometric analysis in evolutionary biology and aquaculture research.
+
+**Pipeline Overview:**
+![CaVFish Pipeline](pipeline.png)
 
 ## 📋 Table of Contents
 
@@ -60,8 +63,8 @@ We present a novel approach to fish pose estimation that incorporates phenotypic
 
 ### Step 1: Clone Repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/CaVFish.git
-cd CaVFish
+git clone https://github.com/josuedelarosa/CaVFish-MORPH.git
+cd CaVFish-MORPH
 ```
 
 ### Step 2: Create Environment
@@ -419,9 +422,9 @@ The `alpha_pheno` parameter controls the strength of anatomical constraints:
 If you find this work useful for your research, please cite:
 
 ```bibtex
-@article{cavfish2026,
-  title={Anatomically-Constrained Pose Estimation for Fish Morphometrics},
-  author={Author Names},
+@article{cavfishmorph2026,
+  title={CaVFish-MORPH Database: AI-Driven Morphometrics for Mapping Freshwater Fish Traits},
+  author={Rodriguez de la Rosa, Josu\u00e9 and others},
   journal={Journal Name},
   year={2026},
   volume={XX},
@@ -488,9 +491,9 @@ For major changes, please open an issue first to discuss your ideas.
 
 For questions or collaboration inquiries:
 
-- **Primary Contact**: [Name] ([email@domain.com](mailto:email@domain.com))
-- **Project Page**: [https://your-project-page.com](https://your-project-page.com)
-- **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/CaVFish/issues)
+- **Primary Contact**: Josué Rodriguez de la Rosa ([josueferjr2@gmail.com](mailto:josueferjr2@gmail.com))
+- **Issues**: [GitHub Issues](https://github.com/josuedelarosa/CaVFish-MORPH/issues)
+- **Repository**: [CaVFish-MORPH](https://github.com/josuedelarosa/CaVFish-MORPH)
 
 ---
 
@@ -502,4 +505,4 @@ For questions or collaboration inquiries:
 
 ---
 
-*This repository is actively maintained. For the latest updates, please check the [Releases](https://github.com/YOUR_USERNAME/CaVFish/releases) page.*
+*This repository is actively maintained. For the latest updates, please check the [Releases](https://github.com/josuedelarosa/CaVFish-MORPH/releases) page.*

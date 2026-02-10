@@ -8,7 +8,7 @@ For complete details, see [EXPERIMENTS.md](EXPERIMENTS.md).
 
 ## 📋 Prerequisites
 
-1. **Environment setup complete** (see [README_PUBLICATION.md](README_PUBLICATION.md#installation))
+1. **Environment setup complete** (see [README.md](README.md#installation))
 2. **Dataset prepared** at `/data/Datasets/Fish/CavFish/`
 3. **Pretrained backbone downloaded** to `checkpoints/mae_pretrain_vit_base_20230913.pth`
 
@@ -268,7 +268,7 @@ checkpoints/mae_pretrain_vit_base_20230913.pth
 ## 📚 More Information
 
 - **Detailed protocol**: [EXPERIMENTS.md](EXPERIMENTS.md)
-- **Installation guide**: [README_PUBLICATION.md](README_PUBLICATION.md)
+- **Installation guide**: [README.md](README.md)
 - **Repository structure**: [REPOSITORY_STRUCTURE.md](REPOSITORY_STRUCTURE.md)
 - **Out-of-scope files**: [OUT_OF_SCOPE.md](OUT_OF_SCOPE.md)
 

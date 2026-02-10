@@ -7,12 +7,11 @@ This document explains the organization of the CaVFish repository and helps you 
 ```
 CaVFish/
 ├── 📋 Documentation & Metadata
-│   ├── README.md                       # Main repository documentation (replace with README_PUBLICATION.md before release)
-│   ├── README_PUBLICATION.md           # ⭐ Publication-ready README
+│   ├── README.md                       # ⭐ Main repository documentation (publication-ready)
 │   ├── EXPERIMENTS.md                  # ⭐ Detailed experimental protocol (START HERE)
 │   ├── REPOSITORY_STRUCTURE.md         # This file - repository guide
 │   ├── QUICK_START.md                  # Quick reference for running experiments
-│   ├── PUBLICATION_CHECKLIST.md        # Pre-publication tasks
+
 │   ├── CITATION.cff                    # Citation metadata
 │   ├── LICENSE                         # Apache 2.0 license
 │   └── LICENSES.md                     # Third-party licenses
@@ -139,7 +138,7 @@ CaVFish/
 **Copy these**:
 1. `phenolosses/phenoloss_distance_loss.py` - Loss function
 2. `phenolosses/vitpose_head_phenoloss.py` - Head module
-3. See [README_PUBLICATION.md](README_PUBLICATION.md#using-phenoloss-in-your-project) for integration guide
+3. See [README.md](README.md#custom-phenoloss-implementation) for integration guide
 
 ### 🧪 I want to explore alternative approaches
 **Note**: All exploratory code has been removed. The repository contains only the components used in the paper. If you want to explore variations:
@@ -387,9 +386,9 @@ python tools/misc/publish_model.py <checkpoint> <output>
 
 - **Experimental protocol**: See [EXPERIMENTS.md](EXPERIMENTS.md)
 - **Out-of-scope files**: See [OUT_OF_SCOPE.md](OUT_OF_SCOPE.md)
-- **Installation & usage**: See [README_PUBLICATION.md](README_PUBLICATION.md)
+- **Installation & usage**: See [README.md](README.md)
 - **Code structure**: This document
-- **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/CaVFish/issues)
+- **Issues**: [GitHub Issues](https://github.com/josuedelarosa/CaVFish-MORPH/issues)
 
 ---
 
