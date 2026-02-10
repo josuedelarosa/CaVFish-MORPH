@@ -1,8 +1,21 @@
 cff-version: 1.3.1
 message: "If you use this software, please cite it as below."
 authors:
-  - name: "MMPose Contributors"
-title: "OpenMMLab Pose Estimation Toolbox and Benchmark"
-date-released: 2020-08-31
-url: "https://github.com/open-mmlab/mmpose"
+  - family-names: "Poveda-Cuellar"
+    given-names: "Jose Luis"
+  - family-names: "Rodriguez-de la Rosa"
+    given-names: "Josué"
+  - family-names: "Martínez-Carrillo"
+    given-names: "Fabio"
+  - family-names: "García-Melo"
+    given-names: "Jorge Enrique"
+  - family-names: "García-Melo"
+    given-names: "Luis José"
+  - family-names: "Marchant"
+    given-names: "Sergio"
+  - family-names: "Björn"
+    given-names: "Reu"
+title: "CaVFish-MORPH Database: AI-Driven Morphometrics for Mapping Freshwater Fish Traits"
+date-released: 2026-02-10
+url: "https://github.com/josuedelarosa/CaVFish-MORPH"
 license: Apache-2.0

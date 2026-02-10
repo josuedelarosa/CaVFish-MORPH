@@ -475,7 +475,7 @@ If you find this work useful for your research, please cite:
 ```bibtex
 @article{cavfishmorph2026,
   title={CaVFish-MORPH Database: AI-Driven Morphometrics for Mapping Freshwater Fish Traits},
-  author={Rodriguez de la Rosa, Josu\u00e9 and others},
+  author={Poveda-Cuellar, Jose Luis and Rodriguez-de la Rosa, Josué and Martínez-Carrillo, Fabio and García-Melo, Jorge Enrique and García-Melo, Luis José and Marchant, Sergio and Björn, Reu},
   journal={Journal Name},
   year={2026},
   volume={XX},

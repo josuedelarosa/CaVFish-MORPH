@@ -380,10 +380,10 @@ For questions about reproducing these experiments, please:
 If you use this code or experimental protocol, please cite:
 
 ```bibtex
-@article{PAPER_REFERENCE,
-  title={},
-  author={},
-  journal={},
+@article{cavfishmorph2026,
+  title={CaVFish-MORPH Database: AI-Driven Morphometrics for Mapping Freshwater Fish Traits},
+  author={Poveda-Cuellar, Jose Luis and Rodriguez-de la Rosa, Josué and Martínez-Carrillo, Fabio and García-Melo, Jorge Enrique and García-Melo, Luis José and Marchant, Sergio and Björn, Reu},
+  journal={Journal Name},
   year={2026}
 }
 ```
