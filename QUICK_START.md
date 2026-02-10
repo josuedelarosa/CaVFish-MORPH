@@ -200,6 +200,59 @@ python tools/analysis_tools/analyze_logs.py plot_curve \
 
 ---
 
+## 🔗 Using Pre-trained Weights
+
+Pre-trained models for all 4 experiments are available in [Releases](https://github.com/josuedelarosa/CaVFish-MORPH/releases).
+
+**Download all weights:**
+```bash
+cd checkpoints
+
+# Baseline (MSE)
+wget https://github.com/josuedelarosa/CaVFish-MORPH/releases/download/baseline/baseline.pth
+
+# Baseline + Log (LogMSE)
+wget https://github.com/josuedelarosa/CaVFish-MORPH/releases/download/baseline-log/baseline-log.pth
+
+# PhenoLoss (MSE + Phenotypic)
+wget https://github.com/josuedelarosa/CaVFish-MORPH/releases/download/phenoloss/phenoloss.pth
+
+# PhenoLoss + Log (LogMSE + Phenotypic)
+wget https://github.com/josuedelarosa/CaVFish-MORPH/releases/download/phenoloss-log/phenoloss-log.pth
+
+cd ..
+```
+
+**Run inference with pre-trained models:**
+```bash
+# All 4 models
+python demo/cavfish_batch_inference.py \
+    --config configs/experiment1_baseline_mse.py \
+    --checkpoint checkpoints/baseline.pth \
+    --model baseline \
+    --dataset-root /path/to/data
+
+python demo/cavfish_batch_inference.py \
+    --config configs/experiment2_baseline_logmse.py \
+    --checkpoint checkpoints/baseline-log.pth \
+    --model baseline-log \
+    --dataset-root /path/to/data
+
+python demo/cavfish_batch_inference.py \
+    --config configs/experiment3_phenoloss_mse.py \
+    --checkpoint checkpoints/phenoloss.pth \
+    --model phenoloss \
+    --dataset-root /path/to/data
+
+python demo/cavfish_batch_inference.py \
+    --config configs/experiment4_phenoloss_logmse.py \
+    --checkpoint checkpoints/phenoloss-log.pth \
+    --model phenoloss-log \
+    --dataset-root /path/to/data
+```
+
+---
+
 ## 🎯 Inference Examples
 
 ### Single Image

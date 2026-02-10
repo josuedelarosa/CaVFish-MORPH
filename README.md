@@ -106,6 +106,38 @@ wget https://download.openmmlab.com/mmpose/v1/pretrained_models/mae_pretrain_vit
 cd ..
 ```
 
+### Step 6: Download Trained CaVFish-MORPH Weights (Optional)
+
+Pre-trained weights for all 4 experiments are available in the [Releases](https://github.com/josuedelarosa/CaVFish-MORPH/releases):
+
+```bash
+cd checkpoints
+
+# Experiment 1: Baseline (MSE)
+wget -O baseline.pth https://github.com/josuedelarosa/CaVFish-MORPH/releases/download/baseline/baseline.pth
+
+# Experiment 2: Baseline + Log (LogMSE)
+wget -O baseline-log.pth https://github.com/josuedelarosa/CaVFish-MORPH/releases/download/baseline-log/baseline-log.pth
+
+# Experiment 3: PhenoLoss (MSE + Phenotypic)
+wget -O phenoloss.pth https://github.com/josuedelarosa/CaVFish-MORPH/releases/download/phenoloss/phenoloss.pth
+
+# Experiment 4: PhenoLoss + Log (LogMSE + Phenotypic)
+wget -O phenoloss-log.pth https://github.com/josuedelarosa/CaVFish-MORPH/releases/download/phenoloss-log/phenoloss-log.pth
+
+cd ..
+```
+
+**Or download using curl:**
+```bash
+cd checkpoints
+curl -L -O https://github.com/josuedelarosa/CaVFish-MORPH/releases/download/baseline/baseline.pth
+curl -L -O https://github.com/josuedelarosa/CaVFish-MORPH/releases/download/baseline-log/baseline-log.pth
+curl -L -O https://github.com/josuedelarosa/CaVFish-MORPH/releases/download/phenoloss/phenoloss.pth
+curl -L -O https://github.com/josuedelarosa/CaVFish-MORPH/releases/download/phenoloss-log/phenoloss-log.pth
+cd ..
+```
+
 ### Verify Installation
 ```bash
 python -c "import mmpose; print(mmpose.__version__)"
@@ -184,29 +216,48 @@ python tools/train.py \
     --work-dir work_dirs/phenoloss
 ```
 
-### Evaluation
+#### Using Pre-trained Weights
 ```bash
 python tools/test.py \
-    configs/body_2d_keypoint/topdown_heatmap/coco/td-hm_ViTPose-fish9_8xb32-100etest.py \
-    work_dirs/phenoloss/best_AP_epoch_XXX.pth
+    configs/experiment1_baseline_mse.py \
+    checkpoints/baseline.pth \
+    --metrics PCK@0.05
+```
+
+#### Using Best Checkpoint from Training
+```bash
+python tools/test.py \
+    configs/experiment1_baseline_mse.py \
+    work_dirs/experiment1_baseline_mse/best_AP_epoch_XXX.pth \
+    --metrics PCK@0.05
 ```
 
 ### Inference on Images
 ```bash
+# Using pre-trained weights
 python demo/image_demo.py \
     path/to/your/image.jpg \
-    configs/body_2d_keypoint/topdown_heatmap/coco/td-hm_ViTPose-fish9_8xb32-100etest.py \
-    work_dirs/phenoloss/best_AP_epoch_XXX.pth \
+    configs/experiment1_baseline_mse.py \
+    checkpoints/baseline.pth \
+    --out-file output/result.jpg
+
+# Using custom trained model
+python demo/image_demo.py \
+    path/to/your/image.jpg \
+    configs/experiment1_baseline_mse.py \
+    work_dirs/experiment1_baseline_mse/best_AP_epoch_XXX.pth \
     --out-file output/result.jpg
 ```
 
 ### Batch Inference
 ```bash
-python run_inference_all.py \
+# Using pre-trained baseline model
+python demo/cavfish_batch_inference.py \
     --config configs/experiment1_baseline_mse.py \
-    --checkpoint work_dirs/phenoloss/best_AP_epoch_XXX.pth \
-    --img-dir path/to/images/ \
-    --out-dir path/to/outputs/
+    --checkpoint checkpoints/baseline.pth \
+    --model baseline \
+    --dataset-root /path/to/CavFish \
+    --datasets "2024 Tarapoto" "2022 Ayapel"
 ```
 
 ---

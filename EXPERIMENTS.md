@@ -330,6 +330,41 @@ To reproduce the results from the paper:
 
 ---
 
+## Using Pre-trained Weights
+
+All four experiment configurations have been trained and the resulting model weights are available for download from GitHub Releases. This allows you to skip the training phase and directly use the models for inference on your own data.
+
+### Download Pre-trained Weights
+
+The trained models are available at:
+- **Baseline (MSE)**: [baseline.pth](https://github.com/josuedelarosa/CaVFish-MORPH/releases/download/experiment1-baseline-mse/baseline.pth)
+- **Baseline (Log-MSE)**: [baseline-log.pth](https://github.com/josuedelarosa/CaVFish-MORPH/releases/download/experiment2-baseline-logmse/baseline-log.pth)
+- **PhenoLoss (MSE)**: [phenoloss.pth](https://github.com/josuedelarosa/CaVFish-MORPH/releases/download/experiment3-phenoloss-mse/phenoloss.pth)
+- **PhenoLoss (Log-MSE)**: [phenoloss-log.pth](https://github.com/josuedelarosa/CaVFish-MORPH/releases/download/experiment4-phenoloss-logmse/phenoloss-log.pth)
+
+Download them to the `checkpoints/` directory:
+```bash
+cd checkpoints/
+
+# Download Baseline model
+wget https://github.com/josuedelarosa/CaVFish-MORPH/releases/download/experiment1-baseline-mse/baseline.pth
+
+# Download Baseline Log-MSE model
+wget https://github.com/josuedelarosa/CaVFish-MORPH/releases/download/experiment2-baseline-logmse/baseline-log.pth
+
+# Download PhenoLoss (MSE) model
+wget https://github.com/josuedelarosa/CaVFish-MORPH/releases/download/experiment3-phenoloss-mse/phenoloss.pth
+
+# Download PhenoLoss (Log-MSE) model
+wget https://github.com/josuedelarosa/CaVFish-MORPH/releases/download/experiment4-phenoloss-logmse/phenoloss-log.pth
+```
+
+### Using Pre-trained Models for Inference
+
+Once downloaded, use the models for inference without training. See [Stage 2: Inference Notebook](STAGES/2-inference.ipynb) for complete examples.
+
+---
+
 ## Questions and Support
 
 For questions about reproducing these experiments, please:
