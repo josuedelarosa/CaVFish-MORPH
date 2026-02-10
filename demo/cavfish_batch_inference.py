@@ -31,7 +31,7 @@ KEYPOINT_NAMES = [
     '0', '1', '2', '3', '4', '5',
     '6', '7', '8', '9', '10', '11',
     '12', '13', '14', '15', '16',
-    '17', '18', '19', '20'
+    '17', '18', '19'
 ]
 
 
@@ -182,7 +182,6 @@ def build_model(
     print('\n✅ DEBUG: Patched model.dataset_meta keys =', model.dataset_meta.keys(), '\n')
 
     # Pipeline de test (igual que en tu image_demo original)
-    # Ajusta si tu config ya lo trae bien:
     model.cfg.test_dataloader.dataset.pipeline = [
         dict(type='LoadImage'),
         dict(type='GetBBoxCenterScale', padding=1.25),

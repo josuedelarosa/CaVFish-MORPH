@@ -1,350 +1,505 @@
-<div align="center">
-  <img src="resources/mmpose-logo.png" width="450"/>
-  <div>&nbsp;</div>
-  <div align="center">
-    <b>OpenMMLab website</b>
-    <sup>
-      <a href="https://openmmlab.com">
-        <i>HOT</i>
-      </a>
-    </sup>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <b>OpenMMLab platform</b>
-    <sup>
-      <a href="https://platform.openmmlab.com">
-        <i>TRY IT OUT</i>
-      </a>
-    </sup>
-  </div>
-  <div>&nbsp;</div>
-
-[![Documentation](https://readthedocs.org/projects/mmpose/badge/?version=latest)](https://mmpose.readthedocs.io/en/latest/?badge=latest)
-[![actions](https://github.com/open-mmlab/mmpose/workflows/merge_stage_test/badge.svg)](https://github.com/open-mmlab/mmpose/actions)
-[![codecov](https://codecov.io/gh/open-mmlab/mmpose/branch/latest/graph/badge.svg)](https://codecov.io/gh/open-mmlab/mmpose)
-[![PyPI](https://img.shields.io/pypi/v/mmpose)](https://pypi.org/project/mmpose/)
-[![LICENSE](https://img.shields.io/github/license/open-mmlab/mmpose.svg)](https://github.com/open-mmlab/mmpose/blob/main/LICENSE)
-[![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/open-mmlab/mmpose.svg)](https://github.com/open-mmlab/mmpose/issues)
-[![Percentage of issues still open](https://isitmaintained.com/badge/open/open-mmlab/mmpose.svg)](https://github.com/open-mmlab/mmpose/issues)
-[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_demo.svg)](https://openxlab.org.cn/apps?search=mmpose)
-
-[📘Documentation](https://mmpose.readthedocs.io/en/latest/) |
-[🛠️Installation](https://mmpose.readthedocs.io/en/latest/installation.html) |
-[👀Model Zoo](https://mmpose.readthedocs.io/en/latest/model_zoo.html) |
-[📜Papers](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/algorithms.html) |
-[🆕Update News](https://mmpose.readthedocs.io/en/latest/notes/changelog.html) |
-[🤔Reporting Issues](https://github.com/open-mmlab/mmpose/issues/new/choose) |
-[🔥RTMPose](/projects/rtmpose/)
-
-</div>
-
-<div align="center">
-  <a href="https://openmmlab.medium.com/" style="text-decoration:none;">
-    <img src="https://user-images.githubusercontent.com/25839884/219255827-67c1a27f-f8c5-46a9-811d-5e57448c61d1.png" width="3%" alt="" /></a>
-  <img src="https://user-images.githubusercontent.com/25839884/218346358-56cc8e2f-a2b8-487f-9088-32480cceabcf.png" width="3%" alt="" />
-  <a href="https://discord.com/channels/1037617289144569886/1072798105428299817" style="text-decoration:none;">
-    <img src="https://user-images.githubusercontent.com/25839884/218347213-c080267f-cbb6-443e-8532-8e1ed9a58ea9.png" width="3%" alt="" /></a>
-  <img src="https://user-images.githubusercontent.com/25839884/218346358-56cc8e2f-a2b8-487f-9088-32480cceabcf.png" width="3%" alt="" />
-  <a href="https://twitter.com/OpenMMLab" style="text-decoration:none;">
-    <img src="https://user-images.githubusercontent.com/25839884/218346637-d30c8a0f-3eba-4699-8131-512fb06d46db.png" width="3%" alt="" /></a>
-  <img src="https://user-images.githubusercontent.com/25839884/218346358-56cc8e2f-a2b8-487f-9088-32480cceabcf.png" width="3%" alt="" />
-  <a href="https://www.youtube.com/openmmlab" style="text-decoration:none;">
-    <img src="https://user-images.githubusercontent.com/25839884/218346691-ceb2116a-465a-40af-8424-9f30d2348ca9.png" width="3%" alt="" /></a>
-  <img src="https://user-images.githubusercontent.com/25839884/218346358-56cc8e2f-a2b8-487f-9088-32480cceabcf.png" width="3%" alt="" />
-  <a href="https://space.bilibili.com/1293512903" style="text-decoration:none;">
-    <img src="https://user-images.githubusercontent.com/25839884/219026751-d7d14cce-a7c9-4e82-9942-8375fca65b99.png" width="3%" alt="" /></a>
-  <img src="https://user-images.githubusercontent.com/25839884/218346358-56cc8e2f-a2b8-487f-9088-32480cceabcf.png" width="3%" alt="" />
-  <a href="https://www.zhihu.com/people/openmmlab" style="text-decoration:none;">
-    <img src="https://user-images.githubusercontent.com/25839884/219026120-ba71e48b-6e94-4bd4-b4e9-b7d175b5e362.png" width="3%" alt="" /></a>
-</div>
-
-## Introduction
-
-English | [简体中文](README_CN.md)
-
-MMPose is an open-source toolbox for pose estimation based on PyTorch.
-It is a part of the [OpenMMLab project](https://github.com/open-mmlab).
-
-The main branch works with **PyTorch 1.8+**.
-
-https://user-images.githubusercontent.com/15977946/124654387-0fd3c500-ded1-11eb-84f6-24eeddbf4d91.mp4
-
-<br/>
-
-<details close>
-<summary><b>Major Features</b></summary>
-
-- **Support diverse tasks**
-
-  We support a wide spectrum of mainstream pose analysis tasks in current research community, including 2d multi-person human pose estimation, 2d hand pose estimation, 2d face landmark detection, 133 keypoint whole-body human pose estimation, 3d human mesh recovery, fashion landmark detection and animal pose estimation.
-  See [Demo](demo/docs/en) for more information.
-
-- **Higher efficiency and higher accuracy**
-
-  MMPose implements multiple state-of-the-art (SOTA) deep learning models, including both top-down & bottom-up approaches. We achieve faster training speed and higher accuracy than other popular codebases, such as [HRNet](https://github.com/leoxiaobin/deep-high-resolution-net.pytorch).
-  See [benchmark.md](docs/en/notes/benchmark.md) for more information.
-
-- **Support for various datasets**
-
-  The toolbox directly supports multiple popular and representative datasets, COCO, AIC, MPII, MPII-TRB, OCHuman etc.
-  See [dataset_zoo](docs/en/dataset_zoo) for more information.
-
-- **Well designed, tested and documented**
-
-  We decompose MMPose into different components and one can easily construct a customized
-  pose estimation framework by combining different modules.
-  We provide detailed documentation and API reference, as well as unittests.
-
-</details>
-
-## What's New
-
-- Release [RTMW3D](/projects/rtmpose3d), a real-time model for 3D wholebody pose estimation.
-
-- Release [RTMO](/projects/rtmo), a state-of-the-art real-time method for multi-person pose estimation.
-
-  ![rtmo](https://github.com/open-mmlab/mmpose/assets/26127467/54d5555a-23e5-4308-89d1-f0c82a6734c2)
-
-- Release [RTMW](/configs/wholebody_2d_keypoint/rtmpose/cocktail14/rtmw_cocktail14.md) models in various sizes ranging from RTMW-m to RTMW-x. The input sizes include `256x192` and `384x288`. This provides flexibility to select the right model for different speed and accuracy requirements.
-
-- Support inference of [PoseAnything](/projects/pose_anything). Web demo is available [here](https://openxlab.org.cn/apps/detail/orhir/Pose-Anything).
-
-- Support for new datasets:
-
-  - (ICCV 2015) [300VW](/docs/en/dataset_zoo/2d_face_keypoint.md)
-
-- Welcome to use the [*MMPose project*](/projects/README.md). Here, you can discover the latest features and algorithms in MMPose and quickly share your ideas and code implementations with the community. Adding new features to MMPose has become smoother:
-
-  - Provides a simple and fast way to add new algorithms, features, and applications to MMPose.
-  - More flexible code structure and style, fewer restrictions, and a shorter code review process.
-  - Utilize the powerful capabilities of MMPose in the form of independent projects without being constrained by the code framework.
-  - Newly added projects include:
-    - [RTMPose](/projects/rtmpose/)
-    - [RTMO](/projects/rtmo/)
-    - [RTMPose3D](/projects/rtmpose3d/)
-    - [PoseAnything](/projects/pose_anything/)
-    - [YOLOX-Pose](/projects/yolox_pose/)
-    - [MMPose4AIGC](/projects/mmpose4aigc/)
-    - [Simple Keypoints](/projects/skps/)
-    - [Just Dance](/projects/just_dance/)
-    - [Uniformer](/projects/uniformer/)
-  - Start your journey as an MMPose contributor with a simple [example project](/projects/example_project/), and let's build a better MMPose together!
-
-<br/>
-
-- January 4, 2024: MMPose [v1.3.0](https://github.com/open-mmlab/mmpose/releases/tag/v1.3.0) has been officially released, with major updates including:
-
-  - Support for new datasets: ExLPose, H3WB
-  - Release of new RTMPose series models: RTMO, RTMW
-  - Support for new algorithm PoseAnything
-  - Enhanced Inferencer with optional progress bar and improved affinity for one-stage methods
-
-  Please check the complete [release notes](https://github.com/open-mmlab/mmpose/releases/tag/v1.3.0) for more details on the updates brought by MMPose v1.3.0!
-
-## 0.x / 1.x Migration
-
-MMPose v1.0.0 is a major update, including many API and config file changes. Currently, a part of the algorithms have been migrated to v1.0.0, and the remaining algorithms will be completed in subsequent versions. We will show the migration progress in this [Roadmap](https://github.com/open-mmlab/mmpose/issues/2258).
-
-If your algorithm has not been migrated, you can continue to use the [0.x branch](https://github.com/open-mmlab/mmpose/tree/0.x) and [old documentation](https://mmpose.readthedocs.io/en/0.x/).
-
-## Installation
-
-Please refer to [installation.md](https://mmpose.readthedocs.io/en/latest/installation.html) for more detailed installation and dataset preparation.
-
-## Getting Started
-
-We provided a series of tutorials about the basic usage of MMPose for new users:
-
-1. For the basic usage of MMPose:
-
-   - [A 20-minute Tour to MMPose](https://mmpose.readthedocs.io/en/latest/guide_to_framework.html)
-   - [Demos](https://mmpose.readthedocs.io/en/latest/demos.html)
-   - [Inference](https://mmpose.readthedocs.io/en/latest/user_guides/inference.html)
-   - [Configs](https://mmpose.readthedocs.io/en/latest/user_guides/configs.html)
-   - [Prepare Datasets](https://mmpose.readthedocs.io/en/latest/user_guides/prepare_datasets.html)
-   - [Train and Test](https://mmpose.readthedocs.io/en/latest/user_guides/train_and_test.html)
-   - [Deployment](https://mmpose.readthedocs.io/en/latest/user_guides/how_to_deploy.html)
-   - [Model Analysis](https://mmpose.readthedocs.io/en/latest/user_guides/model_analysis.html)
-   - [Dataset Annotation and Preprocessing](https://mmpose.readthedocs.io/en/latest/user_guides/dataset_tools.html)
-
-2. For developers who wish to develop based on MMPose:
-
-   - [Learn about Codecs](https://mmpose.readthedocs.io/en/latest/advanced_guides/codecs.html)
-   - [Dataflow in MMPose](https://mmpose.readthedocs.io/en/latest/advanced_guides/dataflow.html)
-   - [Implement New Models](https://mmpose.readthedocs.io/en/latest/advanced_guides/implement_new_models.html)
-   - [Customize Datasets](https://mmpose.readthedocs.io/en/latest/advanced_guides/customize_datasets.html)
-   - [Customize Data Transforms](https://mmpose.readthedocs.io/en/latest/advanced_guides/customize_transforms.html)
-   - [Customize Evaluation](https://mmpose.readthedocs.io/en/latest/advanced_guides/customize_evaluation.html)
-   - [Customize Optimizer](https://mmpose.readthedocs.io/en/latest/advanced_guides/customize_optimizer.html)
-   - [Customize Logging](https://mmpose.readthedocs.io/en/latest/advanced_guides/customize_logging.html)
-   - [How to Deploy](https://mmpose.readthedocs.io/en/latest/user_guides/how_to_deploy.html)
-   - [Model Analysis](https://mmpose.readthedocs.io/en/latest/user_guides/model_analysis.html)
-   - [Migration Guide](https://mmpose.readthedocs.io/en/latest/migration.html)
-
-3. For researchers and developers who are willing to contribute to MMPose:
-
-   - [Contribution Guide](https://mmpose.readthedocs.io/en/latest/contribution_guide.html)
-
-4. For some common issues, we provide a FAQ list:
-
-   - [FAQ](https://mmpose.readthedocs.io/en/latest/faq.html)
-
-## Model Zoo
-
-Results and models are available in the **README.md** of each method's config directory.
-A summary can be found in the [Model Zoo](https://mmpose.readthedocs.io/en/latest/model_zoo.html) page.
-
-<details open>
-<summary><b>Supported algorithms:</b></summary>
-
-- [x] [DeepPose](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/algorithms.html#deeppose-cvpr-2014) (CVPR'2014)
-- [x] [CPM](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#cpm-cvpr-2016) (CVPR'2016)
-- [x] [Hourglass](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#hourglass-eccv-2016) (ECCV'2016)
-- [x] [SimpleBaseline3D](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/algorithms.html#simplebaseline3d-iccv-2017) (ICCV'2017)
-- [ ] [Associative Embedding](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/algorithms.html#associative-embedding-nips-2017) (NeurIPS'2017)
-- [x] [SimpleBaseline2D](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/algorithms.html#simplebaseline2d-eccv-2018) (ECCV'2018)
-- [x] [DSNT](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/algorithms.html#dsnt-2018) (ArXiv'2021)
-- [x] [HRNet](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#hrnet-cvpr-2019) (CVPR'2019)
-- [x] [IPR](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/algorithms.html#ipr-eccv-2018) (ECCV'2018)
-- [x] [VideoPose3D](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/algorithms.html#videopose3d-cvpr-2019) (CVPR'2019)
-- [x] [HRNetv2](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#hrnetv2-tpami-2019) (TPAMI'2019)
-- [x] [MSPN](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#mspn-arxiv-2019) (ArXiv'2019)
-- [x] [SCNet](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#scnet-cvpr-2020) (CVPR'2020)
-- [ ] [HigherHRNet](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#higherhrnet-cvpr-2020) (CVPR'2020)
-- [x] [RSN](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#rsn-eccv-2020) (ECCV'2020)
-- [x] [InterNet](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/algorithms.html#internet-eccv-2020) (ECCV'2020)
-- [ ] [VoxelPose](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/algorithms.html#voxelpose-eccv-2020) (ECCV'2020)
-- [x] [LiteHRNet](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#litehrnet-cvpr-2021) (CVPR'2021)
-- [x] [ViPNAS](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#vipnas-cvpr-2021) (CVPR'2021)
-- [x] [Debias-IPR](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/algorithms.html#debias-ipr-iccv-2021) (ICCV'2021)
-- [x] [SimCC](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/algorithms.html#simcc-eccv-2022) (ECCV'2022)
-
-</details>
-
-<details open>
-<summary><b>Supported techniques:</b></summary>
-
-- [x] [FPN](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/techniques.html#fpn-cvpr-2017) (CVPR'2017)
-- [x] [FP16](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/techniques.html#fp16-arxiv-2017) (ArXiv'2017)
-- [x] [Wingloss](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/techniques.html#wingloss-cvpr-2018) (CVPR'2018)
-- [x] [AdaptiveWingloss](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/techniques.html#adaptivewingloss-iccv-2019) (ICCV'2019)
-- [x] [DarkPose](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/techniques.html#darkpose-cvpr-2020) (CVPR'2020)
-- [x] [UDP](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/techniques.html#udp-cvpr-2020) (CVPR'2020)
-- [x] [Albumentations](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/techniques.html#albumentations-information-2020) (Information'2020)
-- [x] [SoftWingloss](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/techniques.html#softwingloss-tip-2021) (TIP'2021)
-- [x] [RLE](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/techniques.html#rle-iccv-2021) (ICCV'2021)
-
-</details>
-
-<details open>
-<summary><b>Supported datasets:</b></summary>
-
-- [x] [AFLW](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#aflw-iccvw-2011) \[[homepage](https://www.tugraz.at/institute/icg/research/team-bischof/lrs/downloads/aflw/)\] (ICCVW'2011)
-- [x] [sub-JHMDB](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#jhmdb-iccv-2013) \[[homepage](http://jhmdb.is.tue.mpg.de/dataset)\] (ICCV'2013)
-- [x] [COFW](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#cofw-iccv-2013) \[[homepage](http://www.vision.caltech.edu/xpburgos/ICCV13/)\] (ICCV'2013)
-- [x] [MPII](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#mpii-cvpr-2014) \[[homepage](http://human-pose.mpi-inf.mpg.de/)\] (CVPR'2014)
-- [x] [Human3.6M](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#human3-6m-tpami-2014) \[[homepage](http://vision.imar.ro/human3.6m/description.php)\] (TPAMI'2014)
-- [x] [COCO](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#coco-eccv-2014) \[[homepage](http://cocodataset.org/)\] (ECCV'2014)
-- [x] [CMU Panoptic](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#cmu-panoptic-iccv-2015) \[[homepage](http://domedb.perception.cs.cmu.edu/)\] (ICCV'2015)
-- [x] [300VW](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#300w-imavis-2016) \[[homepage](https://ibug.doc.ic.ac.uk/resources/300-VW/)\] (ICCV'2015)
-- [x] [DeepFashion](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#deepfashion-cvpr-2016) \[[homepage](http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion/LandmarkDetection.html)\] (CVPR'2016)
-- [x] [300W](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#300w-imavis-2016) \[[homepage](https://ibug.doc.ic.ac.uk/resources/300-W/)\] (IMAVIS'2016)
-- [x] [RHD](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#rhd-iccv-2017) \[[homepage](https://lmb.informatik.uni-freiburg.de/resources/datasets/RenderedHandposeDataset.en.html)\] (ICCV'2017)
-- [x] [CMU Panoptic HandDB](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#cmu-panoptic-handdb-cvpr-2017) \[[homepage](http://domedb.perception.cs.cmu.edu/handdb.html)\] (CVPR'2017)
-- [x] [AI Challenger](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#ai-challenger-arxiv-2017) \[[homepage](https://github.com/AIChallenger/AI_Challenger_2017)\] (ArXiv'2017)
-- [x] [MHP](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#mhp-acm-mm-2018) \[[homepage](https://lv-mhp.github.io/dataset)\] (ACM MM'2018)
-- [x] [WFLW](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#wflw-cvpr-2018) \[[homepage](https://wywu.github.io/projects/LAB/WFLW.html)\] (CVPR'2018)
-- [x] [PoseTrack18](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#posetrack18-cvpr-2018) \[[homepage](https://posetrack.net/users/download.php)\] (CVPR'2018)
-- [x] [OCHuman](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#ochuman-cvpr-2019) \[[homepage](https://github.com/liruilong940607/OCHumanApi)\] (CVPR'2019)
-- [x] [CrowdPose](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#crowdpose-cvpr-2019) \[[homepage](https://github.com/Jeff-sjtu/CrowdPose)\] (CVPR'2019)
-- [x] [MPII-TRB](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#mpii-trb-iccv-2019) \[[homepage](https://github.com/kennymckormick/Triplet-Representation-of-human-Body)\] (ICCV'2019)
-- [x] [FreiHand](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#freihand-iccv-2019) \[[homepage](https://lmb.informatik.uni-freiburg.de/projects/freihand/)\] (ICCV'2019)
-- [x] [Animal-Pose](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#animal-pose-iccv-2019) \[[homepage](https://sites.google.com/view/animal-pose/)\] (ICCV'2019)
-- [x] [OneHand10K](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#onehand10k-tcsvt-2019) \[[homepage](https://www.yangangwang.com/papers/WANG-MCC-2018-10.html)\] (TCSVT'2019)
-- [x] [Vinegar Fly](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#vinegar-fly-nature-methods-2019) \[[homepage](https://github.com/jgraving/DeepPoseKit-Data)\] (Nature Methods'2019)
-- [x] [Desert Locust](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#desert-locust-elife-2019) \[[homepage](https://github.com/jgraving/DeepPoseKit-Data)\] (Elife'2019)
-- [x] [Grévy’s Zebra](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#grevys-zebra-elife-2019) \[[homepage](https://github.com/jgraving/DeepPoseKit-Data)\] (Elife'2019)
-- [x] [ATRW](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#atrw-acm-mm-2020) \[[homepage](https://cvwc2019.github.io/challenge.html)\] (ACM MM'2020)
-- [x] [Halpe](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#halpe-cvpr-2020) \[[homepage](https://github.com/Fang-Haoshu/Halpe-FullBody/)\] (CVPR'2020)
-- [x] [COCO-WholeBody](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#coco-wholebody-eccv-2020) \[[homepage](https://github.com/jin-s13/COCO-WholeBody/)\] (ECCV'2020)
-- [x] [MacaquePose](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#macaquepose-biorxiv-2020) \[[homepage](http://www.pri.kyoto-u.ac.jp/datasets/macaquepose/index.html)\] (bioRxiv'2020)
-- [x] [InterHand2.6M](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#interhand2-6m-eccv-2020) \[[homepage](https://mks0601.github.io/InterHand2.6M/)\] (ECCV'2020)
-- [x] [AP-10K](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#ap-10k-neurips-2021) \[[homepage](https://github.com/AlexTheBad/AP-10K)\] (NeurIPS'2021)
-- [x] [Horse-10](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#horse-10-wacv-2021) \[[homepage](http://www.mackenziemathislab.org/horse10)\] (WACV'2021)
-- [x] [Human-Art](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#human-art-cvpr-2023) \[[homepage](https://idea-research.github.io/HumanArt/)\] (CVPR'2023)
-- [x] [LaPa](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#lapa-aaai-2020) \[[homepage](https://github.com/JDAI-CV/lapa-dataset)\] (AAAI'2020)
-- [x] [UBody](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/datasets.html#ubody-cvpr-2023) \[[homepage](https://github.com/IDEA-Research/OSX)\] (CVPR'2023)
-
-</details>
-
-<details open>
-<summary><b>Supported backbones:</b></summary>
-
-- [x] [AlexNet](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#alexnet-neurips-2012) (NeurIPS'2012)
-- [x] [VGG](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#vgg-iclr-2015) (ICLR'2015)
-- [x] [ResNet](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#resnet-cvpr-2016) (CVPR'2016)
-- [x] [ResNext](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#resnext-cvpr-2017) (CVPR'2017)
-- [x] [SEResNet](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#seresnet-cvpr-2018) (CVPR'2018)
-- [x] [ShufflenetV1](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#shufflenetv1-cvpr-2018) (CVPR'2018)
-- [x] [ShufflenetV2](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#shufflenetv2-eccv-2018) (ECCV'2018)
-- [x] [MobilenetV2](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#mobilenetv2-cvpr-2018) (CVPR'2018)
-- [x] [ResNetV1D](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#resnetv1d-cvpr-2019) (CVPR'2019)
-- [x] [ResNeSt](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#resnest-arxiv-2020) (ArXiv'2020)
-- [x] [Swin](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#swin-cvpr-2021) (CVPR'2021)
-- [x] [HRFormer](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#hrformer-nips-2021) (NIPS'2021)
-- [x] [PVT](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#pvt-iccv-2021) (ICCV'2021)
-- [x] [PVTV2](https://mmpose.readthedocs.io/en/latest/model_zoo_papers/backbones.html#pvtv2-cvmj-2022) (CVMJ'2022)
-
-</details>
-
-### Model Request
-
-We will keep up with the latest progress of the community, and support more popular algorithms and frameworks. If you have any feature requests, please feel free to leave a comment in [MMPose Roadmap](https://github.com/open-mmlab/mmpose/issues/2258).
-
-## Contributing
-
-We appreciate all contributions to improve MMPose. Please refer to [CONTRIBUTING.md](https://mmpose.readthedocs.io/en/latest/contribution_guide.html) for the contributing guideline.
-
-## Acknowledgement
-
-MMPose is an open source project that is contributed by researchers and engineers from various colleges and companies.
-We appreciate all the contributors who implement their methods or add new features, as well as users who give valuable feedbacks.
-We wish that the toolbox and benchmark could serve the growing research community by providing a flexible toolkit to reimplement existing methods and develop their own new models.
-
-## Citation
-
-If you find this project useful in your research, please consider cite:
-
-```bibtex
-@misc{mmpose2020,
-    title={OpenMMLab Pose Estimation Toolbox and Benchmark},
-    author={MMPose Contributors},
-    howpublished = {\url{https://github.com/open-mmlab/mmpose}},
-    year={2020}
+# CaVFish: Anatomically-Constrained Pose Estimation for Fish Morphometrics
+
+<!-- Badges will be added after publication -->
+
+This repository contains the official implementation of the paper **"[Paper Title]"** published in **[Journal/Conference Name, Year]**.
+
+We present a novel approach to fish pose estimation that incorporates phenotypic distance constraints to improve the accuracy and anatomical plausibility of keypoint predictions. Built on MMPose and ViTPose, our method enforces consistency in inter-landmark distances during training, making it particularly suitable for morphometric analysis in evolutionary biology and aquaculture research.
+
+## 📋 Table of Contents
+
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [Installation](#installation)
+- [Dataset Preparation](#dataset-preparation)
+- [Quick Start](#quick-start)
+- [Experimental Protocol](#experimental-protocol)
+- [Repository Structure](#repository-structure)
+- [Results](#results)
+- [Citation](#citation)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
+---
+
+## 🔍 Overview
+
+**Problem**: Traditional pose estimation models optimize keypoint localization independently, often producing anatomically implausible predictions (e.g., inconsistent body proportions).
+
+**Solution**: We introduce **PhenoLoss**, a phenotypic distance loss that enforces consistency in pairwise keypoint distances based on anatomical relationships. This approach:
+- Maintains standard heatmap-based localization accuracy
+- Adds biologically-informed geometric constraints
+- Improves performance on morphometric measurements
+- Generalizes across fish species with diverse body shapes
+
+**Framework**: 
+- **Base Model**: ViTPose (Vision Transformer for Pose Estimation)
+- **Dataset Format**: COCO keypoints (20 anatomical landmarks)
+- **Paradigm**: Top-down pose estimation
+- **Framework**: MMPose (OpenMMLab)
+
+---
+
+## ✨ Key Features
+
+- **📐 Anatomically-Constrained Loss**: PhenoLoss enforces biologically plausible inter-landmark distances
+- **🔬 Morphometric-Ready**: Designed for scientific measurements requiring high anatomical accuracy
+- **🎯 Flexible Loss Composition**: Easy combination of heatmap losses and phenotypic constraints
+- **📊 Reproducible Experiments**: Fully documented experimental protocol with 4 core conditions
+- **🛠️ MMPose Integration**: Seamless integration with MMPose ecosystem and pretrained models
+- **🐟 Fish-Specific**: 20-keypoint annotation scheme optimized for fish morphology
+
+---
+
+## 🚀 Installation
+
+### Prerequisites
+- Python >= 3.8
+- PyTorch >= 1.8
+- CUDA >= 11.0 (for GPU training)
+
+### Step 1: Clone Repository
+```bash
+git clone https://github.com/YOUR_USERNAME/CaVFish.git
+cd CaVFish
+```
+
+### Step 2: Create Environment
+```bash
+conda create -n cavfish python=3.8 -y
+conda activate cavfish
+```
+
+### Step 3: Install PyTorch
+```bash
+# CUDA 11.3
+pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 --extra-index-url https://download.pytorch.org/whl/cu113
+
+# Or CUDA 11.6
+pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
+
+# Or CPU only
+pip install torch==1.12.1+cpu torchvision==0.13.1+cpu --extra-index-url https://download.pytorch.org/whl/cpu
+```
+
+### Step 4: Install MMPose and Dependencies
+```bash
+pip install -U openmim
+mim install mmengine
+mim install "mmcv>=2.0.0"
+mim install "mmdet>=3.0.0"
+mim install "mmpretrain>=1.0.0"
+
+# Install this package in editable mode
+pip install -e .
+```
+
+### Step 5: Download Pretrained Backbone
+```bash
+mkdir -p checkpoints
+cd checkpoints
+# Download MAE-pretrained ViT-Base
+wget https://download.openmmlab.com/mmpose/v1/pretrained_models/mae_pretrain_vit_base_20230913.pth
+cd ..
+```
+
+### Verify Installation
+```bash
+python -c "import mmpose; print(mmpose.__version__)"
+python -c "import torch; print(torch.__version__)"
+```
+
+---
+
+## 📊 Dataset Preparation
+
+### Dataset Structure
+The repository expects COCO-format annotations with the following structure:
+
+```
+/data/Datasets/Fish/CavFish/
+├── images/
+│   ├── fish001.jpg
+│   ├── fish002.jpg
+│   └── ...
+├── fish20kpt_all_train_2nd-run.json
+└── fish20kpt_all_val_2nd-run.json
+```
+
+### Annotation Format
+Each annotation file follows the COCO keypoint format:
+```json
+{
+  "images": [...],
+  "annotations": [
+    {
+      "id": 1,
+      "image_id": 1,
+      "category_id": 1,
+      "bbox": [x, y, width, height],
+      "keypoints": [x1, y1, v1, x2, y2, v2, ..., x20, y20, v20],
+      "num_keypoints": 20
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "fish",
+      "keypoints": ["kp1", "kp2", ..., "kp20"],
+      "skeleton": []
+    }
+  ]
 }
 ```
 
-## License
+### Keypoint Definitions
+The 20 keypoints correspond to the following anatomical landmarks:
+
+| ID | Name | Description |
+|----|------|-------------|
+| 0 | kp1 | [Anatomical landmark 1] |
+| 1 | kp2 | [Anatomical landmark 2] |
+| ... | ... | ... |
+| 19 | kp20 | [Anatomical landmark 20] |
+
+
+## ⚡ Quick Start
+
+### Training
+
+#### Baseline (Standard MSE Loss)
+```bash
+python tools/train.py \
+    configs/experiment1_baseline_mse.py \
+    --work-dir work_dirs/baseline
+```
+
+#### PhenoLoss (Our Method)
+```bash
+python tools/train.py \
+    configs/experiment3_phenoloss_mse.py \
+    --work-dir work_dirs/phenoloss
+```
+
+### Evaluation
+```bash
+python tools/test.py \
+    configs/body_2d_keypoint/topdown_heatmap/coco/td-hm_ViTPose-fish9_8xb32-100etest.py \
+    work_dirs/phenoloss/best_AP_epoch_XXX.pth
+```
+
+### Inference on Images
+```bash
+python demo/image_demo.py \
+    path/to/your/image.jpg \
+    configs/body_2d_keypoint/topdown_heatmap/coco/td-hm_ViTPose-fish9_8xb32-100etest.py \
+    work_dirs/phenoloss/best_AP_epoch_XXX.pth \
+    --out-file output/result.jpg
+```
+
+### Batch Inference
+```bash
+python run_inference_all.py \
+    --config configs/experiment1_baseline_mse.py \
+    --checkpoint work_dirs/phenoloss/best_AP_epoch_XXX.pth \
+    --img-dir path/to/images/ \
+    --out-dir path/to/outputs/
+```
+
+---
+
+## 🔬 Experimental Protocol
+
+This repository implements **four core experimental conditions** to evaluate the contribution of different loss components:
+
+| # | Experiment | Primary Loss | Phenotypic Loss | Purpose |
+|---|------------|--------------|-----------------|---------|
+| 1 | **Baseline** | MSE | ✗ | Standard heatmap loss |
+| 2 | **Baseline+Log** | Log(MSE) | ✗ | Logarithmic error weighting |
+| 3 | **PhenoLoss** | MSE | ✓ | Our method (MSE + anatomical) |
+| 4 | **PhenoLoss+Log** | Log(MSE) | ✓ | Our method with log transform |
+
+### Detailed Documentation
+For complete details on:
+- Configuration files for each experiment
+- Loss function parameters
+- Training hyperparameters
+- Evaluation protocols
+- Mapping to paper results
+
+See **[EXPERIMENTS.md](EXPERIMENTS.md)** for the full experimental protocol.
+
+### Morphometric Measurements
+
+The framework computes **13 anatomically-defined measurements** from the 20 detected keypoints:
+
+| # | Measurement | Keypoints | Description |
+|---|-------------|-----------|-------------|
+| 1 | **BI** | 0 → 1 | Body Index: Upper Snout Tip → Caudal Peduncle Center |
+| 2 | **Bd** | 2 → 3 | Body Depth: Dorsal Body → Pelvic Fin Base |
+| 3 | **Hd** | 4 → 5 | Head Depth: Upper Head → Barbel Base |
+| 4 | **CPd** | 6 → 7 | Caudal Peduncle Depth: Mid-Dorsal Trunk → Ventral Trunk |
+| 5 | **CFd** | 8 → 9 | Caudal Fin Depth: Upper Caudal Base → Lower Caudal Fin Tip |
+| 6 | **Ed** | 10 → 11 | Eye Diameter: Eye Center → Posterior Eye Margin |
+| 7 | **Eh** | 12 → 3 | Eye Height: Lower Eye Margin → Pelvic Fin Base |
+| 8 | **JI** | 0 → 13 | Jaw Index: Upper Snout Tip → Lower Jaw Tip |
+| 9 | **PFI** | 14 → 15 | Pelvic Fin Index: Operculum Lower Edge → Pelvic Fin Tip |
+| 10 | **PFi** | 14 → 3 | Pelvic Fin insertion: Operculum Lower Edge → Pelvic Fin Base |
+| 11 | **HL** | 0 → 16 | Head Length: Upper Snout Tip → Operculum Upper Edge |
+| 12 | **DL** | 2 → 17 | Dorsal Length: Dorsal Body → Dorsal Fin Tip |
+| 13 | **AL** | 18 → 19 | Anal Length: Anal Fin Base → Anal Fin Tip |
+
+All measurements are provided in both absolute (pixels) and **BI-normalized** (size-independent) formats.
+
+### Key Configuration Differences
+
+**Baseline** (`experiment1_baseline_mse.py`):
+```python
+head=dict(
+    type='HeatmapHead',
+    loss=dict(type='KeypointMSELoss', use_target_weight=True)
+)
+```
+
+**PhenoLoss** (`experiment3_phenoloss_mse.py`):
+```python
+head=dict(
+    type='PhenoLossHead',
+    loss=dict(type='KeypointMSELoss', use_target_weight=True),
+    loss_pheno=dict(
+        type='PhenotypeDistanceLoss',
+        pairs=[(0,1), (2,3), (4,5), ...],  # 13 anatomical pairs
+        alpha_pheno=1e-2,                   # phenotypic loss weight
+        normalization="min_gt"              # scale normalization
+    )
+)
+```
+
+---
+
+## 📁 Repository Structure
+
+```
+CaVFish/
+├── configs/                          # Configuration files
+│   ├── _base_/
+│   │   └── default_runtime.py       # Base runtime configuration
+│   └── body_2d_keypoint/
+│       └── topdown_heatmap/
+│           └── coco/
+│               ├── experiment1_baseline_mse.py              # [✓] Experiment 1: Baseline
+│               ├── experiment2_baseline_logmse.py           # [✓] Experiment 2: Baseline+Log
+│               ├── experiment3_phenoloss_mse.py             # [✓] Experiment 3: PhenoLoss
+│               └── experiment4_phenoloss_logmse.py          # [✓] Experiment 4: PhenoLoss+Log
+│
+├── phenolosses/                      # Custom loss implementations
+│   ├── __init__.py
+│   ├── phenoloss_distance_loss.py    # [✓] PhenotypeDistanceLoss (primary)
+│   ├── vitpose_head_phenoloss.py     # [✓] PhenoLossHead (primary)
+│   ├── keypoint_log_mse_loss.py     # [✓] KeypointLogMSELoss
+│   └── *.py                          # [×] Legacy implementations (not used)
+│
+├── mmpose/                           # MMPose framework (standard)
+│   ├── apis/
+│   ├── models/
+│   ├── datasets/
+│   └── ...
+│
+├── tools/                            # Training and testing scripts
+│   ├── train.py                     # Main training script
+│   ├── test.py                      # Main testing script
+│   └── dataset_converters/          # Dataset conversion utilities
+│
+├── demo/                             # Inference demos
+│   ├── image_demo.py                # Single image inference
+│   └── cavfish_batch_inference.py   # Batch processing
+│
+├── run_inference_all.py              # Batch inference script
+├── notebook_inference.ipynb          # [Tutorial] Inference examples
+├── EXPERIMENTS.md                    # [Documentation] Detailed experimental protocol
+├── README.md                         # This file
+├── CITATION.cff                      # Citation metadata
+├── LICENSE                           # License information
+└── requirements.txt                  # Python dependencies
+```
+
+### Legend
+- `[✓]` - Used in paper experiments (reproducible)
+- `[×]` - Out-of-scope (retained for reference)
+- `[Tutorial]` - Educational/demonstration purpose
+- `[Documentation]` - Reference documentation
+
+---
+
+## 📈 Results
+
+### Quantitative Results
+
+Performance on the validation set (PCK@0.05):
+
+| Method | PCK@0.05 (%) | AUC | Avg. Error (px) |
+|--------|--------------|-----|-----------------|
+| Baseline | XX.X | X.XXX | X.XX |
+| Baseline+Log | XX.X | X.XXX | X.XX |
+| **PhenoLoss (Ours)** | **XX.X** | **X.XXX** | **X.XX** |
+| PhenoLoss+Log | XX.X | X.XXX | X.XX |
+
+<!-- TODO: Fill in actual results from paper -->
+
+### Qualitative Results
+
+![Qualitative comparison](resources/qualitative_results.png)
+<!-- TODO: Add figure showing baseline vs. PhenoLoss predictions -->
+
+### Morphometric Accuracy
+
+Our method significantly improves the accuracy of derived morphometric measurements:
+
+| Measurement | Baseline Error | PhenoLoss Error | Improvement |
+|-------------|----------------|----------------|-------------|
+| Body Index (BI) | X.X% | X.X% | XX% |
+| Body Depth (Bd) | X.X% | X.X% | XX% |
+| Head Length (HL) | X.X% | X.X% | XX% |
+| Eye Diameter (Ed) | X.X% | X.X% | XX% |
+
+<!-- TODO: Add morphometric validation results -->
+
+---
+
+## 🔧 Using PhenoLoss in Your Project
+
+### Integration with Existing Models
+
+To add anatomical constraints to your own pose estimation model:
+
+```python
+from phenolosses.phenoloss_distance_loss import PhenotypeDistanceLoss
+from phenolosses.vitpose_head_phenoloss import PhenoLossHead
+
+# Define anatomical keypoint pairs
+anatomical_pairs = [
+    (0, 1),   # head to snout
+    (3, 2),   # dorsal to ventral
+    # ... add your domain-specific pairs
+]
+
+# Configure the loss
+loss_pheno = PhenotypeDistanceLoss(
+    pairs=anatomical_pairs,
+    alpha_pheno=0.01,              # weight of phenotypic term
+    normalization="min_gt",        # normalize by minimum GT distance
+    degree_normalize=True,         # weight by keypoint connectivity
+    beta=10.0                      # soft-argmax temperature
+)
+
+# Use the extended head
+head = PhenoLossHead(
+    loss=dict(type='KeypointMSELoss', use_target_weight=True),
+    loss_pheno=loss_pheno,
+    alpha_pheno=0.01,
+    # ... other head parameters
+)
+```
+
+### Customization
+
+**Adjusting the anatomical pairs**:
+Edit the `pairs` parameter in your config file to match your keypoint topology.
+
+**Tuning the loss weight**:
+The `alpha_pheno` parameter controls the strength of anatomical constraints:
+- `0.0`: No constraint (pure baseline)
+- `0.001-0.01`: Weak guidance (recommended starting point)
+- `0.01-0.1`: Strong constraints (may hurt localization if too high)
+
+---
+
+## 📜 Citation
+
+If you find this work useful for your research, please cite:
+
+```bibtex
+@article{cavfish2026,
+  title={Anatomically-Constrained Pose Estimation for Fish Morphometrics},
+  author={Author Names},
+  journal={Journal Name},
+  year={2026},
+  volume={XX},
+  pages={XXX-XXX},
+  doi={XX.XXXX/XXXXXXX}
+}
+```
+
+Please also consider citing the underlying frameworks:
+
+```bibtex
+@inproceedings{xu2022vitpose,
+  title={Vitpose: Simple vision transformer baselines for human pose estimation},
+  author={Xu, Yufei and Zhang, Jing and Zhang, Qiming and Tao, Dacheng},
+  booktitle={NeurIPS},
+  year={2022}
+}
+
+@misc{mmpose2020,
+  title={OpenMMLab Pose Estimation Toolbox and Benchmark},
+  author={MMPose Contributors},
+  howpublished={\url{https://github.com/open-mmlab/mmpose}},
+  year={2020}
+}
+```
+
+---
+
+## 📄 License
 
 This project is released under the [Apache 2.0 license](LICENSE).
 
-## Projects in OpenMMLab
+**Third-party Components**:
+- MMPose: Apache 2.0 License
+- ViTPose: Apache 2.0 License
 
-- [MMEngine](https://github.com/open-mmlab/mmengine): OpenMMLab foundational library for training deep learning models.
-- [MMCV](https://github.com/open-mmlab/mmcv): OpenMMLab foundational library for computer vision.
-- [MMPreTrain](https://github.com/open-mmlab/mmpretrain): OpenMMLab pre-training toolbox and benchmark.
-- [MMagic](https://github.com/open-mmlab/mmagic): Open**MM**Lab **A**dvanced, **G**enerative and **I**ntelligent **C**reation toolbox.
-- [MMDetection](https://github.com/open-mmlab/mmdetection): OpenMMLab detection toolbox and benchmark.
-- [MMDetection3D](https://github.com/open-mmlab/mmdetection3d): OpenMMLab's next-generation platform for general 3D object detection.
-- [MMRotate](https://github.com/open-mmlab/mmrotate): OpenMMLab rotated object detection toolbox and benchmark.
-- [MMTracking](https://github.com/open-mmlab/mmtracking): OpenMMLab video perception toolbox and benchmark.
-- [MMSegmentation](https://github.com/open-mmlab/mmsegmentation): OpenMMLab semantic segmentation toolbox and benchmark.
-- [MMOCR](https://github.com/open-mmlab/mmocr): OpenMMLab text detection, recognition, and understanding toolbox.
-- [MMPose](https://github.com/open-mmlab/mmpose): OpenMMLab pose estimation toolbox and benchmark.
-- [MMHuman3D](https://github.com/open-mmlab/mmhuman3d): OpenMMLab 3D human parametric model toolbox and benchmark.
-- [MMFewShot](https://github.com/open-mmlab/mmfewshot): OpenMMLab fewshot learning toolbox and benchmark.
-- [MMAction2](https://github.com/open-mmlab/mmaction2): OpenMMLab's next-generation action understanding toolbox and benchmark.
-- [MMFlow](https://github.com/open-mmlab/mmflow): OpenMMLab optical flow toolbox and benchmark.
-- [MMDeploy](https://github.com/open-mmlab/mmdeploy): OpenMMLab Model Deployment Framework.
-- [MMRazor](https://github.com/open-mmlab/mmrazor): OpenMMLab model compression toolbox and benchmark.
-- [MIM](https://github.com/open-mmlab/mim): MIM installs OpenMMLab packages.
-- [Playground](https://github.com/open-mmlab/playground): A central hub for gathering and showcasing amazing projects built upon OpenMMLab.
+See [LICENSES.md](LICENSES.md) for complete licensing information.
+
+---
+
+## 🙏 Acknowledgments
+
+- **MMPose Team**: For the excellent pose estimation framework
+- **OpenMMLab**: For the comprehensive ecosystem of computer vision tools
+- **ViTPose Authors**: For the vision transformer architecture
+- **[Funding Agency]**: For financial support
+- **[Institution/Lab]**: For providing computational resources and fish datasets
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! If you find bugs or have suggestions:
+
+1. Check existing issues
+2. Open a new issue with detailed description
+3. Submit a pull request with proposed changes
+
+For major changes, please open an issue first to discuss your ideas.
+
+---
+
+## 📧 Contact
+
+For questions or collaboration inquiries:
+
+- **Primary Contact**: [Name] ([email@domain.com](mailto:email@domain.com))
+- **Project Page**: [https://your-project-page.com](https://your-project-page.com)
+- **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/CaVFish/issues)
+
+---
+
+## 🔄 Updates
+
+- **[2026-02]**: Initial public release alongside paper publication
+- **[2026-XX]**: Pretrained models released
+- **[2026-XX]**: Extended documentation and tutorials
+
+---
+
+*This repository is actively maintained. For the latest updates, please check the [Releases](https://github.com/YOUR_USERNAME/CaVFish/releases) page.*

@@ -38,7 +38,7 @@ def main():
     # Initialize model
     model = init_model(args.config, args.checkpoint, device=args.device, cfg_options=cfg_options)
 
-    # Overwrite dataset_meta for 8 keypoints (not 9!)
+    # Overwrite dataset_meta for 20 keypoints
     keypoint_names = [
         '0','1', '2', '3','4','5', '6','7','8','9','10','11','12','13','14', '15','16','17','18','19'
     ]
@@ -61,7 +61,6 @@ def main():
         'CLASSES': ['fish']
     }
 
-
     print('\n\n✅ DEBUG: Patched model.dataset_meta keys =', model.dataset_meta.keys(), '\n')
 
     # Init visualizer
@@ -74,52 +73,49 @@ def main():
 
     # Run inference
     model.cfg.test_dataloader.dataset.pipeline = [
-    dict(type='LoadImage'),
-    dict(type='GetBBoxCenterScale', padding=1.25),
-    dict(type='TopdownAffine', input_size=(192, 256), use_udp=True),
-    dict(type='PackPoseInputs')
-]
+        dict(type='LoadImage'),
+        dict(type='GetBBoxCenterScale', padding=1.25),
+        dict(type='TopdownAffine', input_size=(192, 256), use_udp=True),
+        dict(type='PackPoseInputs')
+    ]
     batch_results = inference_topdown(model, args.img)
     results = merge_data_samples(batch_results)
-    # Obtener coordenadas predichas
+    
+    # Get predicted coordinates
     keypoints = results.pred_instances.keypoints
     scores = results.pred_instances.keypoint_scores
 
-
-    # Imprimir coordenadas y puntajes
+    # Print coordinates and scores
     print("\n📍 Coordenadas predichas:")
     for idx, (xy, score) in enumerate(zip(keypoints[0], scores[0])):
         name = model.dataset_meta['keypoint_names'][idx]
         print(f" - {name}: x={xy[0]:.1f}, y={xy[1]:.1f}, score={score:.3f}")
-        import json
-        import os
+    
+    import json
+    import os
 
-        # Construir el diccionario con los datos
-        predicted_data = {
-            'image': os.path.basename(args.img),
-            'keypoints': [
-                {
-                    'name': model.dataset_meta['keypoint_names'][idx],
-                    'x': float(xy[0]),
-                    'y': float(xy[1]),
-                    'score': float(score)
-                }
-                for idx, (xy, score) in enumerate(zip(keypoints[0], scores[0]))
-            ]
-        }
+    # Build dictionary with data
+    predicted_data = {
+        'image': os.path.basename(args.img),
+        'keypoints': [
+            {
+                'name': model.dataset_meta['keypoint_names'][idx],
+                'x': float(xy[0]),
+                'y': float(xy[1]),
+                'score': float(score)
+            }
+            for idx, (xy, score) in enumerate(zip(keypoints[0], scores[0]))
+        ]
+    }
 
-        # Determinar nombre de archivo de salida
-        import os
-        output_json = os.path.splitext(args.out_file)[0] + '_keypoints.json'
+    # Determine output JSON filename
+    output_json = os.path.splitext(args.out_file)[0] + '_keypoints.json'
 
+    # Save as JSON
+    with open(output_json, 'w') as f:
+        json.dump(predicted_data, f, indent=4)
 
-        # Guardar como JSON
-        with open(output_json, 'w') as f:
-            json.dump(predicted_data, f, indent=4)
-
-        print(f"\n📝 Coordenadas guardadas en JSON: {output_json}")
-
-
+    print(f"\n📝 Coordenadas guardadas en JSON: {output_json}")
 
     # Show or save results
     img = imread(args.img, channel_order='rgb')
