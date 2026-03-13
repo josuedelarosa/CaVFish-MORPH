@@ -17,9 +17,21 @@ from mmpose.structures import merge_data_samples
 DEFAULT_DATASET_ROOT = '/data/Datasets/Fish/CavFish'
 
 DEFAULT_DATASETS = [
-    '2020 Bojonawi',
+    '2016 Rio Bita',
+    '2017 AndesCol',
+    '2018 AndesCol',
+    '2018 Caguan The Field Museum',
+    '2018 Guayavero Duda',
+    '2018 Manacacias Palmarito',
+    '2018 Peces Ituango',
+    '2018 Yungillo',
+    '2019 Amoya',
+    '2019 Inirida',
+    '2019 Rio Vaupes',
     '2020 Bajo Cauca Magdalena',
+    '2020 Bojonawi',
     '2021 Guaviare',
+    '2022 2023 General',
     '2022 Ayapel',
     '2023 Peces San Cipriano Buenaventura',
     '2024 Tarapoto',
